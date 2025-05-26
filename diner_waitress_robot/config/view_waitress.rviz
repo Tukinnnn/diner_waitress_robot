@@ -1,0 +1,58 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Name: Grid
+      Class: rviz_default_plugins/Grid
+      Enabled: true
+      Cell Size: 0.5
+      Color: 160;160;160
+      Plane: XY
+      Plane Cell Count: 40
+    - Name: TF
+      Class: rviz_default_plugins/TF
+      Enabled: true
+    - Name: LaserScan
+      Class: rviz_default_plugins/LaserScan
+      Enabled: true
+      Topic: /scan
+      Queue Size: 10
+      Style: Points
+      Size (m): 0.05
+      Color: 255;0;0
+    - Name: Odometry
+      Class: rviz_default_plugins/Odometry
+      Enabled: true
+      Topic: /odom
+      Color: 0;255;0
+      Alpha: 1.0
+      Shaft Length: 0.1
+      Shaft Radius: 0.01
+      Head Length: 0.05
+      Head Radius: 0.03
+    - Name: RobotModel
+      Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Robot Description: robot_description
+    - Name: Global Costmap
+      Class: nav2_rviz_plugins/Costmap
+      Enabled: true
+      Topic: /global_costmap/costmap
+    - Name: Local Costmap
+      Class: nav2_rviz_plugins/Costmap
+      Enabled: true
+      Topic: /local_costmap/costmap
+    - Name: Global Path
+      Class: nav2_rviz_plugins/Path
+      Enabled: true
+      Topic: /plan
+      Color: 0;0;255
+    - Name: Local Trajectory
+      Class: nav2_rviz_plugins/Trajectory
+      Enabled: true
+      Topic: /local_plan
+      Color: 255;127;0
+  Fixed Frame: map
+  Background Color: 48;48;48
+  Global Options:
+    Frame Rate: 30
+    Fixed Frame: map

@@ -1,0 +1,20 @@
+# config/costmap_common.yaml
+
+robot_radius: 0.22  # Sesuaikan dengan ukuran fisik Diner Waitress Robot
+obstacle_layer:
+  enabled: true
+  observation_sources: scan
+  scan:
+    topic: /scan
+    sensor_frame: laser_frame
+    observation_persistence: 0.0
+    expected_update_rate: 0.3
+    data_type: LaserScan
+    clearing: true
+    marking: true
+    inf_is_valid: true
+
+inflation_layer:
+  enabled: true
+  inflation_radius: 0.5
+  cost_scaling_factor: 5.0

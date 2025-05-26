@@ -1,0 +1,38 @@
+# config/robot_localization.yaml
+
+ekf_filter_node:
+  ros__parameters:
+    use_sim_time: false
+    frequency: 30.0
+    sensor_timeout: 0.1
+    two_d_mode: true
+
+    map_frame: map              # Output frame
+    odom_frame: odom            # Input frame (from encoders, etc.)
+    base_link_frame: base_footprint
+    world_frame: odom           # Kalau pakai GPS bisa ganti ke map
+
+    publish_tf: true
+    publish_acceleration: false
+
+    # Odometry input
+    odom0: odom
+    odom0_config: [true,  true,  false,
+                   false, false, true,
+                   false, false, false,
+                   false, false, true,
+                   false, false, false]
+
+    odom0_differential: false
+    odom0_relative: false
+
+    # IMU input (jika digunakan)
+    imu0: imu/data
+    imu0_config: [false, false, false,
+                  false, false, true,
+                  true,  true,  true,
+                  false, false, true,
+                  true,  true,  true]
+    imu0_differential: false
+    imu0_relative: false
+    imu0_remove_gravitational_acceleration: true

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="inertial_macros">
+
+  <!-- Macros to auto-generate inertial values for common geometries -->
+
+  <!-- Box -->
+  <xacro:macro name="inertial_box" params="mass size">
+    <inertial>
+      <mass value="${mass}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="${(1/12.0)*mass*(pow(size[1],2)+pow(size[2],2))}"
+               iyy="${(1/12.0)*mass*(pow(size[0],2)+pow(size[2],2))}"
+               izz="${(1/12.0)*mass*(pow(size[0],2)+pow(size[1],2))}"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </xacro:macro>
+
+  <!-- Cylinder -->
+  <xacro:macro name="inertial_cylinder" params="mass radius length">
+    <inertial>
+      <mass value="${mass}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="${(1/12.0)*mass*(3*pow(radius,2)+pow(length,2))}"
+               iyy="${(1/2.0)*mass*pow(radius,2)}"
+               izz="${(1/12.0)*mass*(3*pow(radius,2)+pow(length,2))}"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </xacro:macro>
+
+  <!-- Sphere -->
+  <xacro:macro name="inertial_sphere" params="mass radius">
+    <inertial>
+      <mass value="${mass}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="${(2/5.0)*mass*pow(radius,2)}"
+               iyy="${(2/5.0)*mass*pow(radius,2)}"
+               izz="${(2/5.0)*mass*pow(radius,2)}"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </xacro:macro>
+
+</robot>

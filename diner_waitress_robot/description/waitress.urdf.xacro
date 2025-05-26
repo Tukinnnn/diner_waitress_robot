@@ -1,0 +1,12 @@
+# Tahap 1: Struktur file `waitress.urdf.xacro`
+# Lokasi: diner_waitress_robot/description/waitress.urdf.xacro
+
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="diner_waitress">
+  <xacro:include filename="robot_core.xacro"/>
+  <xacro:include filename="lidar.xacro"/>
+  <xacro:include filename="inertial_macros.xacro"/>
+
+  <xacro:robot_core name="base"/>
+  <xacro:lidar_sensor parent="base_link" xyz="0 0 0.2" rpy="0 0 0"/>
+</robot>
