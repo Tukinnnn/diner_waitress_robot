@@ -2,26 +2,19 @@
 <package format="3">
   <name>diner_waitress_bridge</name>
   <version>0.0.1</version>
-  <description>Bridge package to connect perception, control, and interface for Diner Waitress Robot</description>
+  <description>UART communication bridge between Jetson and Arduino for robot waitress project.</description>
 
   <maintainer email="kresna@example.com">I Putu Kresna Dwipayana</maintainer>
   <license>MIT</license>
 
-  <!-- Dependencies -->
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
 
-  <!-- Runtime and build dependencies -->
-  <depend>rclcpp</depend>
-  <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>sensor_msgs</depend>
-  <depend>nav_msgs</depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
 
-  <!-- Optional visualization or service interface -->
-  <depend>tf2_ros</depend>
-  <depend>std_srvs</depend>
+  <test_depend>unittest</test_depend>
 
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>
